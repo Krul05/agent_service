@@ -1,6 +1,10 @@
 # agent_service
 
-Решение реализовано в виде GithubApp и состоит из 3 питон-пакетов: code_agent, review_agent и app. Приложение тестировалось с помощью ngrok:
+Целью работы являлось создание воспроизводимого и расширяемого пайплайна, способного автоматически анализировать требования задачи, вносить изменения в код, выполнять проверки качества и принимать решение о завершении либо повторе цикла разработки без участия человека.
+
+Решение реализовано в виде GithubApp и состоит из 3 питон-пакетов: code_agent, review_agent и app. Для обеспечения воспроизводимости и удобства запуска в репозитории присутствует Docker-конфигурация. Архитектура решения позволяет расширять функциональность, адаптировать стратегию ревью и интегрировать дополнительные проверки, что делает систему пригодной для дальнейшего развития и практического применения. 
+
+Приложение тестировалось с помощью ngrok:
 
 
 <img width="1453" height="456" alt="image" src="https://github.com/user-attachments/assets/22443b01-38c6-4d88-a91a-95b1a3c84023" />
@@ -22,3 +26,22 @@
 <img width="986" height="166" alt="image" src="https://github.com/user-attachments/assets/24482d78-a483-4723-9ee5-e9d9c62065ac" />
 
 Ссылка на тестовую дирректорию: https://github.com/Krul05/megaschool_test
+
+Пример .env:
+
+HOST=0.0.0.0
+PORT=8080
+
+GITHUB_APP_ID=2759740
+GITHUB_APP_PRIVATE_KEY_PATH=/run/secrets/github_app_private_key.pem
+GITHUB_WEBHOOK_SECRET=...
+
+API_KEY=...
+MODEL=gpt://b1g5ehq51foggd0ggqsq/yandexgpt-lite
+LLM_BASE_URL=https://llm.api.cloud.yandex.net
+
+BASE_BRANCH=master
+MAX_ITERS=5
+
+WORKDIR=/tmp/agent-workdir
+
