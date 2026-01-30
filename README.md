@@ -30,17 +30,23 @@
 Пример .env:
 
 HOST=0.0.0.0
+
 PORT=8080
 
 GITHUB_APP_ID=2759740
+
 GITHUB_APP_PRIVATE_KEY_PATH=/run/secrets/github_app_private_key.pem
+
 GITHUB_WEBHOOK_SECRET=...
 
 API_KEY=...
+
 MODEL=gpt://b1g5ehq51foggd0ggqsq/yandexgpt-lite
+
 LLM_BASE_URL=https://llm.api.cloud.yandex.net
 
 BASE_BRANCH=master
+
 MAX_ITERS=5
 
 WORKDIR=/tmp/agent-workdir
